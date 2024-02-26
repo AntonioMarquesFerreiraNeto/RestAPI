@@ -14,34 +14,34 @@ namespace RestAPI_TESTE.Repository {
             _bancoContext = bancoContext;
         }
 
-        public void CreatePessoa(Pessoa pessoa) {
+        public async Task CreatePessoa(Pessoa pessoa) {
             pessoa.CpfReplace();
             _bancoContext.Pessoa.Add(pessoa);
-            _bancoContext.SaveChanges();
+            await _bancoContext.SaveChangesAsync();
         }
 
-        public void DeletePessoa(int id) {
-            Pessoa dataDB = GetPessoaById(id);
+        public async Task DeletePessoa(int id) {
+            Pessoa dataDB = await GetPessoaById(id);
             _bancoContext.Pessoa.Remove(dataDB);
-            _bancoContext.SaveChanges();
+            await _bancoContext.SaveChangesAsync();
         }
 
-        public List<Pessoa> GetAllPessoas() {
-            return _bancoContext.Pessoa.ToList();
+        public async Task<List<Pessoa>> GetAllPessoas() {
+            return  await _bancoContext.Pessoa.ToListAsync();
         }
 
-        public Pessoa GetPessoaById(int id) {
-            return _bancoContext.Pessoa.FirstOrDefault(x => x.Id == id) ?? throw new Exception(MsgErrorEnum.MSGE01.Humanize());
+        public async Task<Pessoa> GetPessoaById(int id) {
+            return await _bancoContext.Pessoa.FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception(MsgErrorEnum.MSGE01.Humanize());
         }
 
-        public void UpdatePessoa(Pessoa pessoa, int id) {
-            Pessoa dataDB = GetPessoaById(id);
+        public async Task UpdatePessoa(Pessoa pessoa, int id) {
+            Pessoa dataDB = await GetPessoaById(id);
             pessoa.CpfReplace();
             dataDB.Name = pessoa.Name;
             dataDB.Cpf = pessoa.Cpf;
             dataDB.BirthDate = pessoa.BirthDate;
             _bancoContext.Pessoa.Update(dataDB);
-            _bancoContext.SaveChanges();
+            await _bancoContext.SaveChangesAsync();
         }
 
     }

@@ -4,10 +4,10 @@ namespace RestAPI_TESTE.Repository.Interfaces
 {
     public interface IPessoaRepository
     {
-        void CreatePessoa(Pessoa pessoa);
-        void UpdatePessoa(Pessoa pessoa, int id); 
-        void DeletePessoa(int id);
-        Pessoa GetPessoaById(int id);
-        List<Pessoa> GetAllPessoas();
+        Task CreatePessoa(Pessoa pessoa);
+        Task UpdatePessoa(Pessoa pessoa, int id); 
+        Task DeletePessoa(int id);
+        Task<Pessoa> GetPessoaById(int id);
+        Task<List<Pessoa>> GetAllPessoas();
     }
 }

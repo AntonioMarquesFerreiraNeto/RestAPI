@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\anton\\source\\repos\\RestAPI_TESTE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{772FA357-5C2F-480E-9879-E0B1DFFF939C}|RestAPI_TESTE\\RestAPI_TESTE.csproj|c:\\users\\anton\\source\\repos\\restapi_teste\\restapi_teste\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{772FA357-5C2F-480E-9879-E0B1DFFF939C}|RestAPI_TESTE\\RestAPI_TESTE.csproj|solutionrelative:restapi_teste\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{772FA357-5C2F-480E-9879-E0B1DFFF939C}|RestAPI_TESTE\\RestAPI_TESTE.csproj|c:\\users\\anton\\source\\repos\\restapi_teste\\restapi_teste\\controllers\\pessoacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772FA357-5C2F-480E-9879-E0B1DFFF939C}|RestAPI_TESTE\\RestAPI_TESTE.csproj|solutionrelative:restapi_teste\\controllers\\pessoacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772FA357-5C2F-480E-9879-E0B1DFFF939C}|RestAPI_TESTE\\RestAPI_TESTE.csproj|c:\\users\\anton\\source\\repos\\restapi_teste\\restapi_teste\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772FA357-5C2F-480E-9879-E0B1DFFF939C}|RestAPI_TESTE\\RestAPI_TESTE.csproj|solutionrelative:restapi_teste\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 575,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PessoaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\RestAPI_TESTE\\RestAPI_TESTE\\Repository\\PessoaRepository.cs",
+              "RelativeDocumentMoniker": "RestAPI_TESTE\\Repository\\PessoaRepository.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\RestAPI_TESTE\\RestAPI_TESTE\\Repository\\PessoaRepository.cs",
+              "RelativeToolTip": "RestAPI_TESTE\\Repository\\PessoaRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T12:05:50.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\RestAPI_TESTE\\RestAPI_TESTE\\appsettings.json",
-              "RelativeDocumentMoniker": "RestAPI_TESTE\\appsettings.json",
-              "ToolTip": "C:\\Users\\anton\\source\\repos\\RestAPI_TESTE\\RestAPI_TESTE\\appsettings.json",
-              "RelativeToolTip": "RestAPI_TESTE\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-02-26T00:39:14.498Z",
+              "Title": "PessoaController.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\RestAPI_TESTE\\RestAPI_TESTE\\Controllers\\PessoaController.cs",
+              "RelativeDocumentMoniker": "RestAPI_TESTE\\Controllers\\PessoaController.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\RestAPI_TESTE\\RestAPI_TESTE\\Controllers\\PessoaController.cs",
+              "RelativeToolTip": "RestAPI_TESTE\\Controllers\\PessoaController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAE0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T11:20:03.115Z",
               "EditorCaption": ""
             }
           ]

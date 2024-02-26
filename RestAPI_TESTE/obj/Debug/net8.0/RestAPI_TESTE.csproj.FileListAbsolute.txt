@@ -134,3 +134,4 @@ C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\refint\
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.pdb
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.genruntimeconfig.cache
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\ref\RestAPI_TESTE.dll
+C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.sourcelink.json

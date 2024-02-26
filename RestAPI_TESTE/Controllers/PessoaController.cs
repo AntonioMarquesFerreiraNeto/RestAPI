@@ -17,10 +17,10 @@ namespace RestAPI_TESTE.Controllers {
         }
 
         [HttpPost]
-        public ActionResult CreatePessoa([FromBody] Pessoa pessoa) {
+        public async Task<IActionResult> CreatePessoa([FromBody] Pessoa pessoa) {
             try {
                 if (ModelState.IsValid) {
-                    _pessoaRepository.CreatePessoa(pessoa);
+                    await _pessoaRepository.CreatePessoa(pessoa);
                     return Ok(MsgSucessEnum.MSGS01.Humanize());
                 }
                 return BadRequest(pessoa);
@@ -31,21 +31,21 @@ namespace RestAPI_TESTE.Controllers {
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetPessoaById(int id) {
+        public async Task<IActionResult> GetPessoaById(int id) {
             try {
-                Pessoa pessoa = _pessoaRepository.GetPessoaById(id);
+                Pessoa pessoa = await _pessoaRepository.GetPessoaById(id);
                 return Ok(pessoa);
             }
             catch (Exception error) {
-                return BadRequest(error.Message);
+                return NotFound(error.Message);
             }
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdatePessoa([FromBody] Pessoa pessoa, int id) {
+        public async Task<IActionResult> UpdatePessoa([FromBody] Pessoa pessoa, int id) {
             try {
                 if (ModelState.IsValid) {
-                    _pessoaRepository.UpdatePessoa(pessoa, id);
+                    await _pessoaRepository.UpdatePessoa(pessoa, id);
                     return Ok(MsgSucessEnum.MSGS02.Humanize());
                 }
                 return BadRequest(pessoa);
@@ -56,9 +56,9 @@ namespace RestAPI_TESTE.Controllers {
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeletePessoa(int id) {
+        public async Task<IActionResult> DeletePessoa(int id) {
             try {
-                _pessoaRepository.DeletePessoa(id);
+                await _pessoaRepository.DeletePessoa(id);
                 return Ok(MsgSucessEnum.MSGS03.Humanize());
             }
             catch (Exception error) {
@@ -67,8 +67,8 @@ namespace RestAPI_TESTE.Controllers {
         }
 
         [HttpGet]
-        public ActionResult GetAllPessoa() {
-            var listPessoas = _pessoaRepository.GetAllPessoas();
+        public async Task<IActionResult> GetAllPessoa() {
+            var listPessoas = await _pessoaRepository.GetAllPessoas();
             if (listPessoas.Any()) {
                 return Ok(listPessoas);
             }
