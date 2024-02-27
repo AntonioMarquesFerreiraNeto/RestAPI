@@ -36,13 +36,13 @@ namespace RestAPI_TESTE.Repository {
 
         public async Task UpdatePessoa(Pessoa pessoa, int id) {
             Pessoa dataDB = await GetPessoaById(id);
-            pessoa.CpfReplace();
             dataDB.Name = pessoa.Name;
             dataDB.Cpf = pessoa.Cpf;
             dataDB.BirthDate = pessoa.BirthDate;
+            dataDB.SexoPessoa = pessoa.SexoPessoa;
+            dataDB.CpfReplace();
             _bancoContext.Pessoa.Update(dataDB);
             await _bancoContext.SaveChangesAsync();
         }
-
     }
 }

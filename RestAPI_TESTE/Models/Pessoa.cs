@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using RestAPI_TESTE.Models.Enums;
 
-namespace RestAPI_TESTE.Models {
-    public class Pessoa {
-        [Required (ErrorMessage = "Obrigatório!")]
+namespace RestAPI_TESTE.Models
+{
+    public class Pessoa
+    {
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Obrigatório!")]
@@ -14,7 +16,11 @@ namespace RestAPI_TESTE.Models {
         [Required(ErrorMessage = "Obrigatório!")]
         public DateTime? BirthDate { get; set; }
 
-        public void CpfReplace() {
+        [Required(ErrorMessage = "Obrigatório!")]
+        public SexoEnum SexoPessoa { get; set; }
+
+        public void CpfReplace()
+        {
             Cpf = Cpf!.Replace(".", "").Replace("-", "");
         }
     }
