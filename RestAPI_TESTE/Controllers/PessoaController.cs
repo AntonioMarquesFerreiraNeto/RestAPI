@@ -18,11 +18,6 @@ namespace RestAPI_TESTE.Controllers {
         }
 
         [HttpPost]
-        /// <summary>
-        /// Lista os itens da To-do list.
-        /// </summary>
-        /// <returns>Os itens da To-do list</returns>
-        /// <response code="200">Returna os itens da To-do list cadastrados</response>
         public async Task<IActionResult> CreatePessoa([FromBody] Pessoa pessoa) {
             try {
                 await _pessoaService.CreatePessoa(pessoa);
