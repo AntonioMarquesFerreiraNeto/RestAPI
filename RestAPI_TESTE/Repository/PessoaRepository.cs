@@ -1,5 +1,6 @@
 ﻿using Humanizer;
 using Microsoft.EntityFrameworkCore;
+using RestAPI_TESTE.CustomExceptions;
 using RestAPI_TESTE.Data;
 using RestAPI_TESTE.Models;
 using RestAPI_TESTE.Models.Enums;
@@ -15,7 +16,6 @@ namespace RestAPI_TESTE.Repository {
         }
 
         public async Task CreatePessoa(Pessoa pessoa) {
-            pessoa.CpfReplace();
             _bancoContext.Pessoa.Add(pessoa);
             await _bancoContext.SaveChangesAsync();
         }
@@ -27,20 +27,16 @@ namespace RestAPI_TESTE.Repository {
         }
 
         public async Task<List<Pessoa>> GetAllPessoas() {
-            return  await _bancoContext.Pessoa.ToListAsync();
+            return await _bancoContext.Pessoa.ToListAsync() ?? throw new NotFoundException(MsgErrorEnum.MSGE01.Humanize()); ;
         }
 
         public async Task<Pessoa> GetPessoaById(int id) {
-            return await _bancoContext.Pessoa.FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception(MsgErrorEnum.MSGE01.Humanize());
+            return await _bancoContext.Pessoa.FirstOrDefaultAsync(x => x.Id == id) ?? throw new NotFoundException(MsgErrorEnum.MSGE01.Humanize());
         }
 
         public async Task UpdatePessoa(Pessoa pessoa, int id) {
             Pessoa dataDB = await GetPessoaById(id);
-            dataDB.Name = pessoa.Name;
-            dataDB.Cpf = pessoa.Cpf;
-            dataDB.BirthDate = pessoa.BirthDate;
-            dataDB.SexoPessoa = pessoa.SexoPessoa;
-            dataDB.CpfReplace();
+            dataDB.UpdatePessoa(pessoa.Name, pessoa.Cpf, pessoa.BirthDate, pessoa.SexoPessoa);
             _bancoContext.Pessoa.Update(dataDB);
             await _bancoContext.SaveChangesAsync();
         }

@@ -120,6 +120,7 @@ C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.csproj.CoreCompileInputs.cache
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.sourcelink.json
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\staticwebassets\msbuild.RestAPI_TESTE.Microsoft.AspNetCore.StaticWebAssets.props
@@ -134,4 +135,6 @@ C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\refint\
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.pdb
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.genruntimeconfig.cache
 C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\ref\RestAPI_TESTE.dll
-C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\obj\Debug\net8.0\RestAPI_TESTE.sourcelink.json
+C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\anton\source\repos\RestAPI_TESTE\RestAPI_TESTE\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

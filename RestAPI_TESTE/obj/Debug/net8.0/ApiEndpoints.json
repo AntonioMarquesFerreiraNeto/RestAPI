@@ -17,7 +17,7 @@
   },
   {
     "ContainingType": "RestAPI_TESTE.Controllers.PessoaController",
-    "Method": "GetAllPessoa",
+    "Method": "GetAllPessoas",
     "RelativePath": "api/Pessoa",
     "HttpMethod": "GET",
     "IsController": true,
@@ -50,13 +50,13 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "pessoa",
-        "Type": "RestAPI_TESTE.Models.Pessoa",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       },
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "pessoa",
+        "Type": "RestAPI_TESTE.Models.Pessoa",
         "IsRequired": true
       }
     ],
