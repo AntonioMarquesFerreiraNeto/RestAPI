@@ -6,30 +6,51 @@ namespace RestAPI_TESTE.Models.Validations {
     public class PessoaValidation : AbstractValidator<Pessoa> {
 
         public PessoaValidation() {
-
+            
             RuleFor(pessoa => pessoa.Name)
-                .Length(10, 70).WithMessage(MsgErrorEnum.MSGE04.Humanize())
-                .When(x => x.Name != string.Empty)
-                .NotEmpty().WithMessage(MsgErrorEnum.MSGE03.Humanize());
+                .NotEmpty()
+                    .WithMessage(MsgErrorEnum.MSGE03.Humanize())
+                .Length(10, 70)
+                    .WithMessage(MsgErrorEnum.MSGE04.Humanize())
+                    .When(pessoa => !string.IsNullOrEmpty(pessoa.Name), ApplyConditionTo.CurrentValidator);
 
             RuleFor(pessoa => pessoa.Cpf)
-                .Must(ValidationRegexCpf).WithMessage(MsgErrorEnum.MSGE05.Humanize())
-                .When(pessoa => pessoa.Cpf != string.Empty)
-                .NotEmpty().WithMessage(MsgErrorEnum.MSGE03.Humanize());
+                .NotEmpty()
+                    .WithMessage(MsgErrorEnum.MSGE03.Humanize())
+                .Must(ValidationRegexCpf)
+                    .WithMessage(MsgErrorEnum.MSGE05.Humanize())
+                    .When(pessoa => !string.IsNullOrEmpty(pessoa.Cpf), ApplyConditionTo.CurrentValidator);
+
+            RuleFor(pessoa => pessoa.Email)
+                .NotEmpty()
+                    .WithMessage(MsgErrorEnum.MSGE03.Humanize())
+                .EmailAddress()
+                    .WithMessage(MsgErrorEnum.MSGE05.Humanize())
+                    .When(pessoa => !string.IsNullOrEmpty(pessoa.Email), ApplyConditionTo.CurrentValidator);
 
             RuleFor(pessoa => pessoa.BirthDate)
-                .Must(OfLegalAgeValidation).WithMessage(MsgErrorEnum.MSGE06.Humanize())
-                .When(pessoa => pessoa.BirthDate != null)
-                .NotEmpty().WithMessage(MsgErrorEnum.MSGE03.Humanize());
+                .Must(MinValidationOfLegalAge)
+                    .WithMessage(MsgErrorEnum.MSGE06.Humanize())
+                .Must(MaxValidationOfLegalAge)
+                    .WithMessage(MsgErrorEnum.MSGE07.Humanize())
+                .When(pessoa => pessoa.BirthDate != DateTime.MinValue)  
+                .NotEmpty()
+                    .WithMessage(MsgErrorEnum.MSGE03.Humanize());              
 
             RuleFor(pessoa => pessoa.SexoPessoa)
                 .NotEmpty().WithMessage(MsgErrorEnum.MSGE03.Humanize());
         }
 
-        private bool OfLegalAgeValidation(DateTime? birthDate) {
-            int days = (int)DateTime.Now.Date.Subtract(birthDate!.Value).TotalDays;
+        private bool MinValidationOfLegalAge(DateTime birthDate) {
+            int days = (DateTime.Now - birthDate).Days;
             int age = days / 365;
-            return age >= 18 ? true : false;
+            return (age < 18 ) ? false : true;
+        }
+        private bool MaxValidationOfLegalAge(DateTime birthDate)
+        {
+            int days = (DateTime.Now - birthDate).Days;
+            int age = days / 365;
+            return (age > 130) ? false : true;
         }
 
         private bool ValidationRegexCpf(string cpf) {

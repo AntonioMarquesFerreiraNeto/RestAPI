@@ -20,7 +20,10 @@ namespace RestAPI_TESTE.Models.Enums {
         [Description("Campo inválido!")]
         MSGE05 = 5,
 
-        [Description("Pessoa menor de idade")]
-        MSGE06 = 6
+        [Description("Pessoa menor de idade.")]
+        MSGE06 = 6,
+        
+        [Description("Data de nascimento inválida!")]
+        MSGE07 = 7
     }
 }

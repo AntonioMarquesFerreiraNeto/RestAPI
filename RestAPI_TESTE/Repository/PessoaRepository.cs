@@ -36,7 +36,7 @@ namespace RestAPI_TESTE.Repository {
 
         public async Task UpdatePessoa(Pessoa pessoa, int id) {
             Pessoa dataDB = await GetPessoaById(id);
-            dataDB.UpdatePessoa(pessoa.Name, pessoa.Cpf, pessoa.BirthDate, pessoa.SexoPessoa);
+            dataDB.UpdatePessoa(pessoa.Name, pessoa.Cpf, pessoa.BirthDate, pessoa.SexoPessoa, pessoa.Email);
             _bancoContext.Pessoa.Update(dataDB);
             await _bancoContext.SaveChangesAsync();
         }
